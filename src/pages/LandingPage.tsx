@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-// Particle background component (you'll need to create this)
 import ParticleBackground from '../components/ParticleBackground';
 
 export default function LandingPage() {
-  // Remove unused form state if not needed
-  // const [form, setForm] = useState({ name: '', email: '', message: '' });
-
   return (
     <div className="min-h-screen relative">
       <ParticleBackground />
