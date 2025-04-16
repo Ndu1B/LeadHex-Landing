@@ -11,8 +11,7 @@ export default function LandingPage() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-gray-900 relative overflow-hidden">
-      {/* Particle Background */}
+    <div className="min-h-screen relative">
       <ParticleBackground />
       
       {/* Navbar */}
