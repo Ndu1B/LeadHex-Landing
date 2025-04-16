@@ -4,7 +4,18 @@ import { Button } from '../components/ui/button';
 import { motion } from 'framer-motion';
 import { createCheckoutSession } from '../api/checkout';
 
-const plans = [
+type PlanType = 'subscription' | 'payment';
+
+interface Plan {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  priceId: string;
+  planType: PlanType;
+}
+
+const plans: Plan[] = [
   {
     name: 'LeadHex Standard',
     price: '$599',
@@ -55,7 +66,7 @@ const plans = [
 export default function Pricing() {
   const [loading, setLoading] = useState<string | null>(null);
 
-  const handleSubscribe = async (priceId: string, planType: 'subscription' | 'payment') => {
+  const handleSubscribe = async (priceId: string, planType: PlanType) => {
     setLoading(priceId);
     try {
       await createCheckoutSession(priceId, planType);
