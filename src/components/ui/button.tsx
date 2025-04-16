@@ -3,27 +3,20 @@ import { cn } from "@/lib/utils"
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  asChild?: boolean
+  size?: 'default' | 'sm' | 'lg'
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, asChild = false, ...props }, ref) => {
-    return (
-      <button
-        className={cn(
-          "inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2",
-          "disabled:pointer-events-none disabled:opacity-50",
-          "bg-emerald-500 text-white hover:bg-emerald-600",
-          "h-11 px-6 py-2",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
+export function Button({ className, size = 'default', ...props }: ButtonProps) {
+  const sizeClasses = {
+    default: 'px-4 py-2',
+    sm: 'px-3 py-1',
+    lg: 'px-6 py-3'
   }
-)
-Button.displayName = "Button"
 
-export { Button } 
+  return (
+    <button
+      className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ${sizeClasses[size]} ${className}`}
+      {...props}
+    />
+  )
+} 
