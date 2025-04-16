@@ -102,7 +102,7 @@ export default function LandingPage() {
           </p>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2 my-24">
+        <section className="grid gap-6 md:grid-cols-2 mt-24 mb-40">
           <Card className="transform transition-all hover:scale-105">
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-4 text-teal-500">Who We Help</h3>
@@ -146,38 +146,7 @@ export default function LandingPage() {
           </Card>
         </section>
 
-        <section className="max-w-xl mx-auto my-32">
-          <Card className="transform hover:shadow-xl transition-all">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-black">Let's Talk</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-teal-400 focus:border-teal-400 outline-none transition-all"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-teal-400 focus:border-teal-400 outline-none transition-all"
-                />
-                <textarea
-                  placeholder="Message"
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-teal-400 focus:border-teal-400 outline-none transition-all h-32"
-                />
-                <Button className="w-full bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600">
-                  Submit
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </section>
+        
       </main>
 
       <footer className="p-6 text-center text-sm text-gray-500 border-t bg-white/50 backdrop-blur-sm">

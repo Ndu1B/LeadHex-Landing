@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from 'react';
 import { cn } from "@/lib/utils"
 
 export interface ButtonProps
@@ -6,7 +6,7 @@ export interface ButtonProps
   size?: 'default' | 'sm' | 'lg'
 }
 
-export function Button({ className, size = 'default', ...props }: ButtonProps) {
+export function Button({ className = '', size = 'default', ...props }: ButtonProps) {
   const sizeClasses = {
     default: 'px-4 py-2',
     sm: 'px-3 py-1',
