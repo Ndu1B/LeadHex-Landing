@@ -1,21 +1,10 @@
 import { useState } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
 import { motion } from 'framer-motion';
+import { createCheckoutSession } from '../api/checkout';
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
-
-interface PricingPlan {
-  name: string;
-  price: string;
-  description: string;
-  features: string[];
-  priceId: string;
-  planType: 'subscription' | 'payment';
-}
-
-const plans: PricingPlan[] = [
+const plans = [
   {
     name: 'LeadHex Standard',
     price: '$599',
@@ -68,25 +57,8 @@ export default function Pricing() {
 
   const handleSubscribe = async (priceId: string, planType: 'subscription' | 'payment') => {
     setLoading(priceId);
-    
     try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ priceId, planType }),
-      });
-
-      const { sessionId } = await response.json();
-      const stripe = await stripePromise;
-      
-      if (stripe) {
-        const { error } = await stripe.redirectToCheckout({ sessionId });
-        if (error) {
-          console.error(error);
-        }
-      }
+      await createCheckoutSession(priceId, planType);
     } catch (error) {
       console.error(error);
     } finally {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { cn } from "@/lib/utils"
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -9,11 +8,11 @@ export function Card({ className = '', ...props }: CardProps) {
       className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}
       {...props}
     />
-  )
+  );
 }
 
 export function CardContent({ className = '', ...props }: CardProps) {
   return (
     <div className={`p-6 ${className}`} {...props} />
-  )
+  );
 } 

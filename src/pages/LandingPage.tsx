@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { Card, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import ParticleBackground from '../components/ParticleBackground';
 
 export default function LandingPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  // Remove unused form state if not needed
+  // const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   return (
     <div className="min-h-screen relative">
