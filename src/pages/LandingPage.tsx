@@ -10,13 +10,13 @@ export default function LandingPage() {
       <ParticleBackground />
       
       {/* Navbar */}
-      <header className="border-b bg-white/70 backdrop-blur-sm sticky top-0 z-10">
+      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-10">
         <nav className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
           <Link to="/">
             <h1 className="text-xl font-semibold text-teal-500">LeadHex</h1>
           </Link>
           <div className="flex gap-6">
-            <Link to="/pricing" className="text-gray-600 hover:text-teal-500 transition-colors">
+            <Link to="/pricing" className="text-white hover:text-teal-500 transition-colors">
               Pricing
             </Link>
             <a href="#login" className="text-gray-600 hover:text-teal-500 transition-colors">
