@@ -55,17 +55,17 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "/public/stats-icon.png",
+                icon: "/stats-icon.png",
                 title: "Hyper-personalized emails",
                 description: "AI-powered customization for each prospect"
               },
               {
-                icon: "/public/mail-icon.png",
+                icon: "/mail-icon.png",
                 title: "Intelligent Dashboard",
                 description: "Track leads and campaign performance in real-time"
               },
               {
-                icon: "/public/sync-icon.png",
+                icon: "/sync-icon.png",
                 title: "Seamless Integration",
                 description: "Works with your existing tools and workflows"
               }
